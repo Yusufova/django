@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from person.views import ListPoet
+from person.views import ListCreatePoet
+from person.views import UpdateDeletePoet
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Odina', ListPoet.as_view())
+    path('api/v1/ListCreatePoet/', ListCreatePoet.as_view()),
+    path('api/v1/UpdateDeletePoet/<int:pk>/', UpdateDeletePoet.as_view()),
+
 ]
